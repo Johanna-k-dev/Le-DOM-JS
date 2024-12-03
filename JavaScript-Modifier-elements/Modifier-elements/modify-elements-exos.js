@@ -150,7 +150,7 @@ for (let i = 0; i < elementListToCreate.length; i++) {
    const tableElements =elementListToCreate[i];
    const body = document.body;
 
-   console.log(tableElements);
+   
 
    if (tableElements.name === "section") {
 
@@ -168,7 +168,7 @@ for (let i = 0; i < elementListToCreate.length; i++) {
       for (let i = 0; i <= 2; i++) {
          const section = document.getElementsByClassName("section")   
          const div= document.createElement("div");
-         div.className("div");
+         div.className ="div";
          section[i].appendChild(div);
          console.log(div);
          
@@ -176,31 +176,31 @@ for (let i = 0; i < elementListToCreate.length; i++) {
       }
 
    }else if (tableElements.name === "p"){
-      
+
       const div = document.getElementsByClassName("div")
-      const p =document.createElement("p")
+      const p =document.createElement("p");
       p.className= "p";
       p.innerText= "il y a du texte ici !";
-      div.appendChild(p);
+      div[i].appendChild(p)
       console.log(p);
-      
 
- }else{
-
+   }else if (tableElements.name === "span"){
    for (let i = 0; i <=2; i++) {
 
-      const p =document.getElementsByClassName("p")
+      const p = document.getElementsByClassName("p")
       const span = document.createElement("span");
-      span.innerText="il y a du texte dans le span"
-      p.appendChild(span);
+      span.className ="span";
+      span.innerText = "ceci est un span !";
+      p[0].appendChild(span);
    }
    
-   console.log(span);
+   console.log(p);
    
  }
    
    
 }
+console.log(tableElements);
 
 /**
    * -------------------------------------------------------
@@ -212,3 +212,6 @@ for (let i = 0; i < elementListToCreate.length; i++) {
    * -------------------------------------------------------
 */
 
+
+const allSpan = document.querySelectorAll(".span");
+console.log(allSpan.length);
