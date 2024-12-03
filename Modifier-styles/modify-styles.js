@@ -1,28 +1,24 @@
-    /**
+/**
  * --------------------------------
  * 1 - Via JS, renseigner la valeur des attributs src et alt des balises <img>
  * Toujours via JS, leur fixer une longueur de 100%.
  * --------------------------------
  */
 
-
 const images = document.querySelectorAll("img");
 console.log(images);
 
 for (let i = 0; i < images.length; i++) {
-    const image = images[i];
-    
-    if (image) {
-      
-       image.alt= "Super image";
-       image.setAttribute("style", "width:100%");   
-       console.log(image);
-    }
+  const image = images[i];
+
+  if (image) {
+    image.alt = "Super image";
+    image.src = href =
+      "https://cdn.pixabay.com/photo/2019/06/04/20/33/dog-4252274_1280.jpg";
+    image.setAttribute("style", "width:100%");
+    console.log(image);
+  }
 }
-    
-
-
-
 
 // Voici un bout de code : ne pas y toucher (vraiment) 🤓
 const titleList = ["h1", "h2", "h3", "h4", "h5", "h6"];
@@ -36,100 +32,102 @@ const titleList = ["h1", "h2", "h3", "h4", "h5", "h6"];
  * --------------------------------
  */
 
-
 for (let i = 0; i < titleList.length; i++) {
+  const titles = document.querySelectorAll(titleList[i]);
 
-    const titleOfList = titleList[i];
-
-    const titles = document.querySelectorAll(titleList);
-    const title = titles[i];
+  titles.forEach((title) => {
+    title.classList.add(`titles${i + 1}`);
     console.log(title);
-    
-
-    /*if () {
-        
-        
-        
-        
-    }else if(title === "h2"){
-        
-
-    }else if(title === "h3"){
-
-
-    }else if(title === "h4"){
-        
-
-    }else if(title === "h5"){
-
-
-    }else if(title === "h6"){
-
-    }
-
-    
-    
+  });
 }
 
 /**
  * --------------------------------
  * 3 - Ajouter les classes suivantes à certains éléments HTML (à vous d'analyser lesquels) :
  * → "section2"
- * → "card-container" 
- * → "card" 
+ * → "card-container"
+ * → "card"
  * --------------------------------
  */
- const section2 = document.querySelectorAll("section"[1]);
- console.log(section2);
- 
+const sections = document.querySelectorAll("section"); // Tableau.length = 2
+sections[1].className = "section2";
+console.log(sections[1]);
 
+const div = document.querySelectorAll("div", sections[1]);
+console.log(div);
 
+function foundDiv1AndAddClassName() {
+  for (let i = 0; i < div.length; i++) {
+    const elementDiv = div[i];
 
-
-
+    if (i === 0) {
+      div[i].className = "card-container";
+    } else {
+      elementDiv.className = "card";
+    }
+  }
+  return div;
+}
+console.log(foundDiv1AndAddClassName());
 
 /**
  * --------------------------------
- * 4 - Via JS : 
+ * 4 - Via JS :
  * → Changer la couleur de fond de la balise <main></main>
- * 
+ *
  * Classe "section2" :
  * → Lui ajouter une couleur de fond, un padding et un margin
  * → La passer en flex et en column
- * 
+ *
  * * Classe "card-container" :
  * → Lui ajouter une bordure, un padding et un margin
  * → La passer en flex et aligner ses éléments enfants selon l'axe horizontal. Il doit y avoir "un peu d'espace entre chaque enfant"
- * 
+ *
  * Classe "card"
  * → Lui ajouter une bordure, un padding et un margin
  * → La passer en flex et en column
  * → Centrer ses éléments enfants par rapport à l'axe vertical
- * 
+ *
  * Bien. Vous vous êtes entraînés à manipuler le CSS depuis Javascript.
  * Maintenant que vous êtes bons, sentez-vous libres d'ajouter un peu de CSS directement depuis la feuille CSS de l'exercice.
  * --------------------------------
  */
 
+const main = document.querySelector("main");
+main.style.backgroundColor = "salmon"; // ===> Hi hi XD
+console.log(main);
 
+sections[1].style.backgroundColor = "lavender";
 
+div[0].setAttribute(
+  "style",
+  " margin : 15px; padding : 25px; display : flex;flex-direction:column; align-item : center; justify-content : space-between; border: solid 2px black"
+);
+console.log(div[0]);
 
+const cards = document.querySelectorAll(".card");
+console.log(cards);
+
+cards.forEach((cards) => {
+  cards.setAttribute(
+    "style",
+    "border: solid 2px black; border-radius:20px; margin:5px; padding: 10px; align-item:center;display:flex; flex-direction:column; "
+  );
+  console.log(cards);
+});
+
+  /**
+   * --------------------------------
+   * 5 - Retirer la classe "card" du second et du troisième élément possédant cette classe.
+   * Ça casse tout n'est-ce pas ? 🤓 En vrai ça passe mais j'aime pas trop.
+   * → Remettre la classe "card" sur ces deux éléments
+   * --------------------------------
+   */
+console.log(cards.length);
 
 /**
  * --------------------------------
- * 5 - Retirer la classe "card" du second et du troisième élément possédant cette classe.
- * Ça casse tout n'est-ce pas ? 🤓 En vrai ça passe mais j'aime pas trop. 
- * → Remettre la classe "card" sur ces deux éléments
- * --------------------------------
- */
-
-
-
-
-
-/**
- * --------------------------------
- * 6 - Via JS, créer une <div> comme celles déjà présentes dans le HTML : avec sa classe, son style et ses éléments enfants. 
+ * 6 - Via JS, créer une <div> comme celles déjà présentes dans le HTML : avec sa classe, son style et ses éléments enfants.
  * → Injecter cette <div> en tant que 4ème enfant de "card-container"
  * Cool n'est-ce pas ? 🤓
  * --------------------------------
