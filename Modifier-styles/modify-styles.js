@@ -6,6 +6,22 @@
  */
 
 
+const images = document.querySelectorAll("img");
+console.log(images);
+
+for (let i = 0; i < images.length; i++) {
+    const image = images[i];
+    
+    if (image) {
+      
+       image.alt= "Super image";
+       image.setAttribute("style", "width:100%");   
+       console.log(image);
+    }
+}
+    
+
+
 
 
 // Voici un bout de code : ne pas y toucher (vraiment) 🤓
@@ -21,8 +37,39 @@ const titleList = ["h1", "h2", "h3", "h4", "h5", "h6"];
  */
 
 
+for (let i = 0; i < titleList.length; i++) {
+
+    const titleOfList = titleList[i];
+
+    const titles = document.querySelectorAll(titleList);
+    const title = titles[i];
+    console.log(title);
+    
+
+    /*if () {
+        
+        
+        
+        
+    }else if(title === "h2"){
+        
+
+    }else if(title === "h3"){
 
 
+    }else if(title === "h4"){
+        
+
+    }else if(title === "h5"){
+
+
+    }else if(title === "h6"){
+
+    }
+
+    
+    
+}
 
 /**
  * --------------------------------
@@ -32,6 +79,9 @@ const titleList = ["h1", "h2", "h3", "h4", "h5", "h6"];
  * → "card" 
  * --------------------------------
  */
+ const section2 = document.querySelectorAll("section"[1]);
+ console.log(section2);
+ 
 
 
 
