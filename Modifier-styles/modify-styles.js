@@ -6,7 +6,7 @@
  */
 
 const images = document.querySelectorAll("img");
-console.log(images);
+//console.log(images);
 
 for (let i = 0; i < images.length; i++) {
   const image = images[i];
@@ -16,7 +16,7 @@ for (let i = 0; i < images.length; i++) {
     image.src = href =
       "https://cdn.pixabay.com/photo/2019/06/04/20/33/dog-4252274_1280.jpg";
     image.setAttribute("style", "width:100%");
-    console.log(image);
+    //console.log(image);
   }
 }
 
@@ -37,7 +37,7 @@ for (let i = 0; i < titleList.length; i++) {
 
   titles.forEach((title) => {
     title.classList.add(`titles${i + 1}`);
-    console.log(title);
+    //console.log(title);
   });
 }
 
@@ -51,12 +51,12 @@ for (let i = 0; i < titleList.length; i++) {
  */
 const sections = document.querySelectorAll("section"); // Tableau.length = 2
 sections[1].className = "section2";
-console.log(sections[1]);
+//console.log(sections[1]);
 
 const div = document.querySelectorAll("div", sections[1]);
-console.log(div);
+//console.log(div);
 
-function foundDiv1AndAddClassName() {
+function foundDivAndAddClassName() {
   for (let i = 0; i < div.length; i++) {
     const elementDiv = div[i];
 
@@ -68,8 +68,8 @@ function foundDiv1AndAddClassName() {
   }
   return div;
 }
-console.log(foundDiv1AndAddClassName());
-
+//console.log();
+foundDivAndAddClassName();
 /**
  * --------------------------------
  * 4 - Via JS :
@@ -95,7 +95,7 @@ console.log(foundDiv1AndAddClassName());
 
 const main = document.querySelector("main");
 main.style.backgroundColor = "salmon"; // ===> Hi hi XD
-console.log(main);
+//console.log(main);
 
 sections[1].style.backgroundColor = "lavender";
 
@@ -103,10 +103,10 @@ div[0].setAttribute(
   "style",
   " margin : 15px; padding : 25px; display : flex;flex-direction:column; align-item : center; justify-content : space-between; border: solid 2px black"
 );
-console.log(div[0]);
+//console.log(div[0]);
 
 const cards = document.querySelectorAll(".card");
-console.log(cards);
+//console.log(cards);
 
 cards.forEach((cards) => {
   cards.setAttribute(
@@ -116,15 +116,18 @@ cards.forEach((cards) => {
   console.log(cards);
 });
 
-  /**
-   * --------------------------------
-   * 5 - Retirer la classe "card" du second et du troisième élément possédant cette classe.
-   * Ça casse tout n'est-ce pas ? 🤓 En vrai ça passe mais j'aime pas trop.
-   * → Remettre la classe "card" sur ces deux éléments
-   * --------------------------------
-   */
-console.log(cards.length);
-
+/**
+ * --------------------------------
+ * 5 - Retirer la classe "card" du second et du troisième élément possédant cette classe.
+ * Ça casse tout n'est-ce pas ? 🤓 En vrai ça passe mais j'aime pas trop.
+ * → Remettre la classe "card" sur ces deux éléments
+ * --------------------------------
+ */
+cards.forEach((idCards) => {
+  if (idCards !== div[1] && div[2]) {
+    idCards.classList.remove("card");
+  }
+});
 /**
  * --------------------------------
  * 6 - Via JS, créer une <div> comme celles déjà présentes dans le HTML : avec sa classe, son style et ses éléments enfants.
@@ -132,3 +135,32 @@ console.log(cards.length);
  * Cool n'est-ce pas ? 🤓
  * --------------------------------
  */
+
+const newDivContainerCards = document.createElement("div");
+newDivContainerCards.className = "container-cards";
+sections[1].appendChild(newDivContainerCards);
+
+const newDivCard = document.createElement("div");
+newDivCard.className = "card";
+newDivCard.setAttribute(
+  "style",
+  "border: solid 2px black; border-radius:20px; margin:5px; padding: 10px; align-item:center;display:flex; flex-direction:column; "
+);
+newDivContainerCards.appendChild(newDivCard);
+
+const newImgOfNewCard = document.createElement("img");
+newImgOfNewCard.src = href =
+  "https://cdn.pixabay.com/photo/2019/06/04/20/33/dog-4252274_1280.jpg";
+newImgOfNewCard.setAttribute("style", "width:100%");
+newDivCard.appendChild(newImgOfNewCard);
+
+const newH3OfNewCard = document.createElement("h3");
+const newPOfNewCard = document.createElement("p");
+newPOfNewCard.innerText =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores iste deleniti rem ex aut incidunt. Animi corrupti a nesciunt quas assumenda repudiandae consectetur similique dolorem error nulla, quibusdam placeat necessitatibus.";
+4;
+newDivCard.appendChild(newH3OfNewCard);
+
+const newButton = document.createElement("button");
+newButton.innerText = "Click stp";
+newDivCard.appendChild(newButton);
