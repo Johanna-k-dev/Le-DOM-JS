@@ -1,0 +1,102 @@
+/* Général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+  }
+  
+  header .logo img {
+    height: 30px;
+  }
+  
+  header .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .search-bar input {
+    width: 300px;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+  }
+  
+  header .search-bar button {
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  header .user-profile img {
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 200px;
+    background-color: white;
+    padding: 10px;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Main Content */
+  .video-grid {
+    margin-left: 220px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .video {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .video h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+  }
+  
+  .video p {
+    color: gray;
+    font-size: 14px;
+  }
+  
