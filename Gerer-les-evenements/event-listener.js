@@ -93,9 +93,9 @@ calculatorButton.addEventListener("click", (e) => {
 /**
  * --------------------------------------------
  * 3 - Créer un container avec 3 div (sans passer par JS, en HTML/CSS classique). Chaque div propose un produit à acheter avec une image, un titre, un petit paragraphe et un bouton "Acheter 🤓"
- *
+ *mettre lmes objets dans un tableau
  * → Attacher un écouteur d'événément de type "click" sur chaque bouton "Acheter 🤓".
- * → Si une div est cliquée, le produit est posusé dans une propriétée "selectedProducts".
+ * → Si une div est cliquée, le produit est poussé dans une propriétée "selectedProducts".
  * → Cette propriété est affichée dans le DOM, et pour chaque nouveau produit sélectionné, le DOM est mis à jour.
  *
  * Le pôle Marketing vous demande d'ajouter un bout de code afin de relever l'intérêt des utilisateurs vis-à-vis des produits proposés sur la e-boutique
